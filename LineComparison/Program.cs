@@ -25,6 +25,8 @@ namespace HelloWorld
                 FindingLength obj = new FindingLength();
                 obj.LineLength(x1, y1, x2, y2, i);
             }
+            CheckEquality obj1 = new CheckEquality();
+            obj1.ComputeEquals();
         }
         public class FindingLength
         {
@@ -47,6 +49,24 @@ namespace HelloWorld
                 values[index] = val;
             }
 
+        }
+        public class CheckEquality
+        {
+            public void ComputeEquals()
+            {
+
+                if (InitializeArray.values[0].Equals(InitializeArray.values[1]) == true)
+
+                {
+                    Console.WriteLine(" Both line are same");
+                }
+                else
+                {
+                    Console.WriteLine("both line is different");
+                    string comparing = ((InitializeArray.values[0]).CompareTo(InitializeArray.values[1]) > 0) ? "Line 1 is greater than line 2" : "Line 2 is greater than line 1";
+                    Console.WriteLine(comparing);
+                }
+            }
         }
     }
 }
